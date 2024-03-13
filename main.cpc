@@ -1,1 +1,17 @@
-OUTPUT "Hello, world!"
+CLASS Book
+    PRIVATE ISBN : STRING
+    PRIVATE Title : STRING
+    PRIVATE Author : STRING
+    PRIVATE Availability : BOOLEAN
+
+    PUBLIC PROCEDURE NEW (m_ISBN : STRING, m_Title : STRING, m_Author : STRING, m_Availability : BOOLEAN)
+        ISBN <- m_ISBN
+        Title <- m_Title
+        Author <- m_Author
+        Availability <- m_Availability
+    ENDPROCEDURE
+ENDCLASS
+
+DECLARE book1 : Book
+book1 <- NEW Book("001", "book1", "stone", TRUE)
+OUTPUT book1
