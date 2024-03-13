@@ -1,3 +1,8 @@
+
+//CLASS Library
+    //PUBLIC PROCEDURE NEW (m_BookAmount : INTEGER, )
+//ENDCLASS
+
 CLASS Book
     PRIVATE ISBN : STRING
     PRIVATE Title : STRING
@@ -14,6 +19,23 @@ CLASS Book
     FUNCTION toString() RETURNS STRING
         RETURN "The book " & Title & " is written by " & Author
     ENDFUNCTION
+
+    FUNCTION getISBN() RETURNS STRING
+        RETURN ISBN
+    ENDFUNCTION
+
+    FUNCTION getTitle() RETURNS STRING
+        RETURN Title
+    ENDFUNCTION
+
+    FUNCTION getAuthor() RETURNS STRING
+        RETURN Author
+    ENDFUNCTION
+
+    FUNCTION getAvailability() RETURNS BOOLEAN
+        RETURN Availability
+    ENDFUNCTION
+
 ENDCLASS
 
 DECLARE book1 : Book
@@ -22,3 +44,7 @@ book1 <- NEW Book("001", "book1", "stone", TRUE)
 DECLARE sentence : STRING
 sentence <- book1.toString()
 OUTPUT sentence
+
+DECLARE booktitle : STRING
+booktitle <- book1.getTitle()
+OUTPUT booktitle
