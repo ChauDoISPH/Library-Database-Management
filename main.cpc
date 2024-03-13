@@ -10,8 +10,15 @@ CLASS Book
         Author <- m_Author
         Availability <- m_Availability
     ENDPROCEDURE
+
+    FUNCTION toString() RETURNS STRING
+        RETURN "The book " & Title & " is written by " & Author
+    ENDFUNCTION
 ENDCLASS
 
 DECLARE book1 : Book
 book1 <- NEW Book("001", "book1", "stone", TRUE)
-OUTPUT book1
+
+DECLARE sentence : STRING
+sentence <- book1.toString()
+OUTPUT sentence
